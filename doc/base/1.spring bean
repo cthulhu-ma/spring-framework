@@ -1,0 +1,23 @@
+1. spring bean 的scope(作用域):
+   1. singleton
+   2. prototype
+   3. request
+   4. session
+   5. global session
+
+   singleton 是默认的scope, 在Spring的IoC容器中只存在一个实例，所有对该对象的引用将共享这个实例。
+
+   prototype(原型): 对于那些请求方不能共享的对象实例，应该将其bean定义的scope设置为prototype。
+
+
+   request、session、global session 三种只适用于Web应用程序.
+
+   request:
+     当同时有10个HTTP请求进来的时候，容器会分别针对这10个请求返回10个全新的RequestProcessor对象实例，且它们之间互不干扰。
+     所以严格意义上说request可以看作prototype的一种特例，除了request的场景更加具体
+
+   session:
+      与request相比，除了拥有session scope的bean比request scope的bean可能更长的存活时间，其他没什么差别
+
+
+
